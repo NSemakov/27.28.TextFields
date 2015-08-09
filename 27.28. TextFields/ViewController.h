@@ -7,8 +7,28 @@
 //
 
 #import <UIKit/UIKit.h>
+typedef NS_ENUM(NSInteger, textFieldType){
+    textFieldTypeFirstname=10,
+    textFieldTypeLastname,
+    textFieldTypeLogin,
+    textFieldTypePassword,
+    textFieldTypeAge,
+    textFieldTypePhone,
+    textFieldTypeMail
+};
 
-@interface ViewController : UIViewController
+typedef NS_ENUM(NSInteger, labelType){
+    labelTypeFirstname=20,
+    labelTypeLastname,
+    labelTypeLogin,
+    labelTypePassword,
+    labelTypeAge,
+    labelTypePhone,
+    labelTypeMail
+};
+@interface ViewController : UIViewController <UITextFieldDelegate>
+@property (strong, nonatomic) IBOutletCollection(UITextField) NSArray *collectionTextFields;
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *collectionLabels;
 
 
 @end
